@@ -26,7 +26,7 @@ namespace TP6_GRUPO_11.Conexion
 
         public DataTable ObtenerProductos()
         {
-            DataTable tabla = ObtenerTabla("Productos", "SELECT * FROM Productos");
+            DataTable tabla = ObtenerTabla("Productos", "SELECT TOP 10 * FROM Productos");
             tabla.Columns["IdProducto"].ColumnName = "ID Producto";
             tabla.Columns["NombreProducto"].ColumnName = "Nombre Producto";
             tabla.Columns["IdProveedor"].ColumnName = "Id Proveedor";
