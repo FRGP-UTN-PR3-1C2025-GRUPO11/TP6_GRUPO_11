@@ -11,7 +11,30 @@
     <form id="formularioEj01" runat="server">
         <div style="display: flex; flex-direction: column; gap: 20px;">
             <asp:Label runat="server" Text="PRODUCTOS"></asp:Label>
-            <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+            <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:TemplateField></asp:TemplateField>
+                    <asp:TemplateField HeaderText="Id Producto">
+                        <ItemTemplate>
+                            <asp:Label ID="lblIdProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre Producto">
+                        <ItemTemplate>
+                            <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="CantidadPorUnidad">
+                        <ItemTemplate>
+                            <asp:Label ID="lblCantidadxUnidad" runat="server" Text='<%# Bind("CantidadPorUnidad") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Precio Unidad">
+                        <ItemTemplate>
+                            <asp:Label ID="lblPrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
                 <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                 <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
                 <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />

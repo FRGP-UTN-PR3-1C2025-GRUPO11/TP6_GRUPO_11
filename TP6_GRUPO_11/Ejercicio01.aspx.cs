@@ -12,9 +12,18 @@ namespace TP6_GRUPO_11
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack == false)
+            {
+                CargarGridView();
+            }
+        }
+
+        private void CargarGridView()
+        {
             gestionNeptuno gestionNeptuno = new gestionNeptuno();
             gvProductos.DataSource = gestionNeptuno.ObtenerProductos(); ///ACÁ OBTIENE LA TABLA
             gvProductos.DataBind();
+
         }
     }
 }

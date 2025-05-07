@@ -26,18 +26,20 @@ namespace TP6_GRUPO_11.Conexion
 
         public DataTable ObtenerProductos()
         {
-            DataTable tabla = ObtenerTabla("Productos", "SELECT TOP 10 * FROM Productos");
-            tabla.Columns["IdProducto"].ColumnName = "ID Producto";
-            tabla.Columns["NombreProducto"].ColumnName = "Nombre Producto";
-            tabla.Columns["IdProveedor"].ColumnName = "Id Proveedor";
-            tabla.Columns["IdCategoría"].ColumnName = "Id Categoría";
-            tabla.Columns["CantidadPorUnidad"].ColumnName = "Cantidad Por Unidad";
-            tabla.Columns["PrecioUnidad"].ColumnName = "Precio Unidad";
-            tabla.Columns["UnidadesEnExistencia"].ColumnName = "Unidades en Existencia";
-            tabla.Columns["UnidadesEnPedido"].ColumnName = "Unidades en Pedido";
-            tabla.Columns["NivelNuevoPedido"].ColumnName = "Nivel nuevo Pedido";
+            //DataTable tabla = ObtenerTabla("Productos", "SELECT TOP 10 * FROM Productos");
+            //tabla.Columns["IdProducto"].ColumnName = "ID Producto";
+            //tabla.Columns["NombreProducto"].ColumnName = "Nombre Producto";
+            //tabla.Columns["IdProveedor"].ColumnName = "Id Proveedor";
+            //tabla.Columns["IdCategoría"].ColumnName = "Id Categoría";
+            //tabla.Columns["CantidadPorUnidad"].ColumnName = "Cantidad Por Unidad";
+            //tabla.Columns["PrecioUnidad"].ColumnName = "Precio Unidad";
+            //tabla.Columns["UnidadesEnExistencia"].ColumnName = "Unidades en Existencia";
+            //tabla.Columns["UnidadesEnPedido"].ColumnName = "Unidades en Pedido";
+            //tabla.Columns["NivelNuevoPedido"].ColumnName = "Nivel nuevo Pedido";
 
-            return tabla;
+            //return tabla;
+
+            return ObtenerTabla("Libros", "SELECT TOP 10 * FROM Productos");
         }
     }
 }
