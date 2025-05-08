@@ -11,7 +11,7 @@
     <form id="formularioEj01" runat="server">
         <div style="display: flex; flex-direction: column; gap: 20px;">
             <asp:Label runat="server" Text="PRODUCTOS"></asp:Label>
-            <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False">
+            <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gvProductos_PageIndexChanging" style="margin-right: 0px">
                 <Columns>
                     <asp:TemplateField></asp:TemplateField>
                     <asp:TemplateField HeaderText="Id Producto">

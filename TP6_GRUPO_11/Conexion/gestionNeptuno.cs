@@ -39,7 +39,7 @@ namespace TP6_GRUPO_11.Conexion
 
             //return tabla;
 
-            return ObtenerTabla("Libros", "SELECT TOP 10 * FROM Productos");
+            return ObtenerTabla("Productos", "SELECT * FROM Productos");
         }
     }
 }

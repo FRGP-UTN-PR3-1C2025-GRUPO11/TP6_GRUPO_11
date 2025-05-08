@@ -25,5 +25,12 @@ namespace TP6_GRUPO_11
             gvProductos.DataBind();
 
         }
+
+        protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvProductos.PageIndex= e.NewPageIndex;
+            CargarGridView();
+
+        }
     }
 }
