@@ -15,6 +15,10 @@ namespace TP6_GRUPO_11.Conexion
         {
 
         }
+        public Productos(int idProducto)
+        {
+            _IdProducto = idProducto;
+        }
 
         public Productos(int idProducto,string nombreProducto,string cantidadPorUnidad,decimal precioUnidad) {
             _IdProducto = idProducto;
