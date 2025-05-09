@@ -37,12 +37,23 @@ namespace TP6_GRUPO_11
         {
             string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lblIdProducto")).Text;
 
-           Productos productos = new Productos(Convert.ToInt32(idProducto));
+           Producto producto = new Producto(Convert.ToInt32(idProducto));
            gestionNeptuno gestion = new gestionNeptuno();
             
-           gestion.EliminarProducto(productos);
+           gestion.EliminarProducto(producto);
            CargarGridView();
 
+        }
+
+        protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvProductos.EditIndex = e.NewEditIndex;
+            CargarGridView();
         }
     }
 }

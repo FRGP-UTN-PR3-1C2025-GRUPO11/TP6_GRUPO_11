@@ -5,22 +5,22 @@ using System.Web;
 
 namespace TP6_GRUPO_11.Conexion
 {
-    public class Productos
+    public class Producto
     {
         private int _IdProducto;
         private string _NombreProducto;
         private string _CantidadPorUnidad;
         private decimal _PrecioUnidad;
-        public Productos()
+        public Producto()
         {
 
         }
-        public Productos(int idProducto)
+        public Producto(int idProducto)
         {
             _IdProducto = idProducto;
         }
 
-        public Productos(int idProducto,string nombreProducto,string cantidadPorUnidad,decimal precioUnidad) {
+        public Producto(int idProducto,string nombreProducto,string cantidadPorUnidad,decimal precioUnidad) {
             _IdProducto = idProducto;
             _NombreProducto = nombreProducto;
             _CantidadPorUnidad = cantidadPorUnidad;
