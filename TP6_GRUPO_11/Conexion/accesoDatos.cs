@@ -8,7 +8,9 @@ namespace TP6_GRUPO_11
 {
     public class accesoDatos
     {
-       string rutaNeptuno = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=false;";
+
+        //string rutaNeptuno = @"Data Source=DESKTOP-KQ7K053\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
+
     public accesoDatos()
         {
             // Constructor de la clase accesoDatos
