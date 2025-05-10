@@ -10,7 +10,11 @@
 <body>
     <form id="formularioEj02" runat="server">
         <div>
-            hola
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Inicio"></asp:Label>
+            <br />
+            <br />
+            <asp:HyperLink ID="HPSeleccionarProductos" runat="server" Font-Underline="True" ForeColor="#3333FF" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
+            <br />
         </div>
     </form>
 </body>
