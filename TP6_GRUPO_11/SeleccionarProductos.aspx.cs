@@ -22,16 +22,16 @@ namespace TP6_GRUPO_11
 
         private void CargarGridView()
         {
-            gestionNeptuno gestionNeptunoEj2 = new gestionNeptuno();
-            GVProductosEj2.DataSource = gestionNeptunoEj2.ObtenerProductos(); ///ACÁ OBTIENE LA TABLA
-            GVProductosEj2.DataBind();
+            //gestionNeptuno gestionNeptunoEj2 = new gestionNeptuno();
+            //GVProductosEj2.DataSource = gestionNeptunoEj2.ObtenerProductos(); ///ACÁ OBTIENE LA TABLA
+            //GVProductosEj2.DataBind();
 
         }
 
         protected void GVProductosEj2_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GVProductosEj2.PageIndex = e.NewPageIndex;
-            CargarGridView();
+            //GVProductosEj2.PageIndex = e.NewPageIndex;
+            //CargarGridView();
         }
     }
 

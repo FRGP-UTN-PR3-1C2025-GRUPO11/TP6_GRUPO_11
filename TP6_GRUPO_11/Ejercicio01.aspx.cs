@@ -50,24 +50,31 @@ namespace TP6_GRUPO_11
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
 
+            
+        }
+
+    protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        gvProductos.EditIndex = e.NewEditIndex;
+        CargarGridView(); 
+    }
+
+        protected System.Void gvProductos_RowUpdating1(System.Object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
+        {
             // Accede al control dentro del EditItemTemplate
             string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_idProducto")).Text;
-            string nombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("tb_eit_nombreProducto")).Text;
-            string cantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("tb_eit_cantidadPorUnidad")).Text;
-            string precioUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("tb_eit_precioUnidad")).Text;
+            string nombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_eit_nombreProducto")).Text;
+            string cantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("TextBox1")).Text;
+            string precioUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_eit_PrecioUnidad")).Text;
 
             // Crear el objeto Producto y asignar los valores
-            Producto producto = new Producto();
-            producto.IdProducto = Convert.ToInt32(idProducto);
-            producto.NombreProducto = nombreProducto;
-            producto.CantidadPorUnidad = cantidadPorUnidad;
-            producto.PrecioUnidad = Convert.ToDecimal(precioUnidad);
+            Producto producto = new Producto(Convert.ToInt32(idProducto), nombreProducto, cantidadPorUnidad, Convert.ToDecimal(precioUnidad));
 
             // Me conecto a la base
             gestionNeptuno gestion = new gestionNeptuno();
 
             // ACTUALIZO
-            // TODO: gestion.actualizarProducto(producto);
+            gestion.ActualizarProducto(producto);
 
             // Salir del modo de edición
             gvProductos.EditIndex = -1;
@@ -76,10 +83,10 @@ namespace TP6_GRUPO_11
             CargarGridView();
         }
 
-    protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
-    {
-        gvProductos.EditIndex = e.NewEditIndex;
-        CargarGridView(); 
+        protected System.Void gvProductos_RowCancelingEdit(System.Object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
+        {
+            gvProductos.EditIndex = -1;
+            CargarGridView();
+        }
     }
-  }
 }

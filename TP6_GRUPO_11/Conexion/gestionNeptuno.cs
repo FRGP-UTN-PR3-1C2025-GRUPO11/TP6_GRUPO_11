@@ -42,6 +42,35 @@ namespace TP6_GRUPO_11.Conexion
             return ObtenerTabla("Productos", "SELECT * FROM Productos");
         }
 
+        private void ArmarParametrosProducto(ref SqlCommand comando, Producto producto)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IdProducto", SqlDbType.Int);
+            sqlParametros.Value = producto.IdProducto;
+            sqlParametros = comando.Parameters.Add("@NombreProducto", SqlDbType.NVarChar, 40);
+            sqlParametros.Value = producto.NombreProducto;
+            sqlParametros = comando.Parameters.Add("@CantidadPorUnidad", SqlDbType.NVarChar, 20);
+            sqlParametros.Value = producto.CantidadPorUnidad;
+            sqlParametros = comando.Parameters.Add("@PrecioUnidad", SqlDbType.Money);
+            sqlParametros.Value = producto.PrecioUnidad;
+        }
+
+        public bool ActualizarProducto(Producto producto)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
+            ArmarParametrosProducto(ref sqlCommand, producto);
+            accesoDatos acceso = new accesoDatos();
+            int FilasInsertadas = acceso.EjecutarProcedimientosAlmacenados(sqlCommand, "psActualizarProducto");
+            if (FilasInsertadas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void ArmarParametrosProductoEliminar(ref SqlCommand Comando, Producto producto)
         {
             SqlParameter SqlParametros = new SqlParameter();
