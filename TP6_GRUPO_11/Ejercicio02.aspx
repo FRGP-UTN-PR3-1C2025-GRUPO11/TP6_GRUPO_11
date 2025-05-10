@@ -5,7 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Ejercicio 2</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
     <form id="formularioEj02" runat="server">
@@ -14,6 +21,7 @@
             <br />
             <br />
             <asp:HyperLink ID="HPSeleccionarProductos" runat="server" Font-Underline="True" ForeColor="#3333FF" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
+            <asp:HyperLink ID="HlMostrarProductos" runat="server" Font-Underline="True" ForeColor="#3333FF" NavigateUrl="~/MostraProductos.aspx">Mostrar Productos</asp:HyperLink>
             <br />
         </div>
     </form>

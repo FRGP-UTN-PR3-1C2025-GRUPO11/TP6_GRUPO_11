@@ -48,8 +48,5 @@ namespace TP6_GRUPO_11.Conexion
             get { return _PrecioUnidad; }
             set { _PrecioUnidad= value; }
         }
-
-
-
     }
 }
