@@ -45,11 +45,8 @@ namespace TP6_GRUPO_11
 
         }
 
-        protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
+       
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
 
@@ -78,5 +75,11 @@ namespace TP6_GRUPO_11
             // Recargar el GridView
             CargarGridView();
         }
+
+    protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        gvProductos.EditIndex = e.NewEditIndex;
+        CargarGridView(); 
     }
+  }
 }
