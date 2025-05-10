@@ -28,8 +28,11 @@ namespace TP6_GRUPO_11
 
         }
 
-
-
+        protected void GVProductosEj2_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GVProductosEj2.PageIndex = e.NewPageIndex;
+            CargarGridView();
+        }
     }
 
 }
