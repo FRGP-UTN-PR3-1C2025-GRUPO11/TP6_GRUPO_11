@@ -50,9 +50,32 @@ namespace TP6_GRUPO_11
 
         }
 
-        protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            gvProductos.EditIndex = e.NewEditIndex;
+
+            // Accede al control dentro del EditItemTemplate
+            string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_idProducto")).Text;
+            string nombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("tb_eit_nombreProducto")).Text;
+            string cantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("tb_eit_cantidadPorUnidad")).Text;
+            string precioUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("tb_eit_precioUnidad")).Text;
+
+            // Crear el objeto Producto y asignar los valores
+            Producto producto = new Producto();
+            producto.IdProducto = Convert.ToInt32(idProducto);
+            producto.NombreProducto = nombreProducto;
+            producto.CantidadPorUnidad = cantidadPorUnidad;
+            producto.PrecioUnidad = Convert.ToDecimal(precioUnidad);
+
+            // Me conecto a la base
+            gestionNeptuno gestion = new gestionNeptuno();
+
+            // ACTUALIZO
+            // TODO: gestion.actualizarProducto(producto);
+
+            // Salir del modo de edición
+            gvProductos.EditIndex = -1;
+
+            // Recargar el GridView
             CargarGridView();
         }
     }
