@@ -10,6 +10,7 @@
 <body>
     <form id="formularioMostraProductos" runat="server">
         <div>
+            <h1>Productos Seleccionados:</h1>
             <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -22,7 +23,6 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
-            A cá va gridView con productos para mostrar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Ejercicio02.aspx">Ir al inicio</asp:HyperLink>
         </div>
     </form>

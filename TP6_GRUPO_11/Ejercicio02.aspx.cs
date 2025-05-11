@@ -13,5 +13,11 @@ namespace TP6_GRUPO_11
         {
 
         }
+
+        protected void EliminarProductosSeleccionados_Click(object sender, EventArgs e)
+        {
+            Session["ProductosSeleccionados"] = null;
+            lblEliminados.Text = "Productos eliminados de la lista de seleccionados";
+        }
     }
 }

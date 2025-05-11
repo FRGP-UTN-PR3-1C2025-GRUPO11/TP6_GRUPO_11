@@ -12,17 +12,48 @@
             flex-direction: column;
             gap: 10px;
         }
+        a, input[type="submit"] {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 350px;
+            text-align: center;
+            padding: 10px 20px;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+            display: block;
+            border: none;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        #EliminarProductosSeleccionados 
+        {
+            background-color: #FF0000;
+        }
+        #HPSeleccionarProductos 
+        {
+            background-color: green;
+        }
+
+        #HlMostrarProductos
+        {
+            background-color: blue;
+        }
+
     </style>
 </head>
 <body>
     <form id="formularioEj02" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Inicio"></asp:Label>
-            <br />
-            <br />
-            <asp:HyperLink ID="HPSeleccionarProductos" runat="server" Font-Underline="True" ForeColor="#3333FF" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
-            <asp:HyperLink ID="HlMostrarProductos" runat="server" Font-Underline="True" ForeColor="#3333FF" NavigateUrl="~/MostraProductos.aspx">Mostrar Productos</asp:HyperLink>
-            <br />
+            <h1>Inicio</h1>
+            <asp:HyperLink ID="HPSeleccionarProductos" runat="server" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
+            <div style="flex-direction: row">
+                <asp:Button ID="EliminarProductosSeleccionados" runat="server" Text="Eliminar Productos Seleccionados" OnClick="EliminarProductosSeleccionados_Click" />
+                <asp:Label ID="lblEliminados" runat="server" style="line-height:35px; color: red; font-weight: bolder "></asp:Label>
+            </div>
+            <asp:HyperLink ID="HlMostrarProductos" runat="server" NavigateUrl="~/MostraProductos.aspx">Mostrar Productos</asp:HyperLink>
         </div>
     </form>
 </body>
