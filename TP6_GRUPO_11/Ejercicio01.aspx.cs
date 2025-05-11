@@ -59,7 +59,7 @@ namespace TP6_GRUPO_11
         CargarGridView(); 
     }
 
-        protected System.Void gvProductos_RowUpdating1(System.Object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
+        protected void gvProductos_RowUpdating1(System.Object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             // Accede al control dentro del EditItemTemplate
             string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_idProducto")).Text;
@@ -83,7 +83,7 @@ namespace TP6_GRUPO_11
             CargarGridView();
         }
 
-        protected System.Void gvProductos_RowCancelingEdit(System.Object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
+        protected void gvProductos_RowCancelingEdit(System.Object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
         {
             gvProductos.EditIndex = -1;
             CargarGridView();

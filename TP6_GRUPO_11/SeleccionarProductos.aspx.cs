@@ -26,7 +26,8 @@ namespace TP6_GRUPO_11
                 string idProducto = e.CommandArgument.ToString();
                 GridViewRow row = ((LinkButton)e.CommandSource).NamingContainer as GridViewRow;
                 string nombreProducto = ((Label)row.FindControl("lbl_it_Nombre_Producto")).Text;
-
+                string idProvedor = ((Label)row.FindControl("lbl_it_Id_Proveedor")).Text;
+                string precioUnidad = ((Label)row.FindControl("lbl_it_Precio_Unitario")).Text;
                 // ACÁ OBTENGO O CREO LA TABLA EN LA SESSION
                 DataTable dataTable = Session["ProductosSeleccionados"] as DataTable;
                 if (dataTable == null)
@@ -34,11 +35,13 @@ namespace TP6_GRUPO_11
                     dataTable = new DataTable();
                     dataTable.Columns.Add("IdProducto");
                     dataTable.Columns.Add("NombreProducto");
+                    dataTable.Columns.Add("IdProveedor");
+                    dataTable.Columns.Add("PrecioUnidad");
                     Session["ProductosSeleccionados"] = dataTable;
                 }
 
                 //ACÁ AGREGO EL PRODUCTO QUE SE SELECCIONÓ
-                dataTable.Rows.Add(idProducto, nombreProducto);
+                dataTable.Rows.Add(idProducto, nombreProducto,idProvedor,precioUnidad);
 
                 //ACÁ ACTUALIZO EL LABEL CON LOS PRODUCTOS SELECCIONADOS
                 lblSeleccionados.Text = $"Items seleccionados: {string.Join(", ", dataTable.AsEnumerable().Select(r => r["NombreProducto"].ToString()))}";

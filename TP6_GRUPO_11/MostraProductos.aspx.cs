@@ -11,7 +11,11 @@ namespace TP6_GRUPO_11
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["ProductosSeleccionados"]!=null)
+            {
+                gvProductos.DataSource = Session["ProductosSeleccionados"];
+                gvProductos.DataBind();
+            }
         }
     }
 }
