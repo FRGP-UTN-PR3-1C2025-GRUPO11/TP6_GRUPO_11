@@ -23,6 +23,7 @@ namespace TP6_GRUPO_11
         {
             if (e.CommandName == "Select")
             {
+                MensajeError.Text= " "; 
                 string idProducto = e.CommandArgument.ToString();
                 GridViewRow row = ((LinkButton)e.CommandSource).NamingContainer as GridViewRow;
                 string nombreProducto = ((Label)row.FindControl("lbl_it_Nombre_Producto")).Text;
@@ -38,7 +39,18 @@ namespace TP6_GRUPO_11
                     dataTable.Columns.Add("IdProveedor");
                     dataTable.Columns.Add("PrecioUnidad");
                     Session["ProductosSeleccionados"] = dataTable;
+                    
                 }
+
+                foreach (DataRow fila in dataTable.Rows)
+                {
+                    if (fila["NombreProducto"].ToString() == nombreProducto)
+                    {
+                        MensajeError.Text = "Este producto ya fue seleccionado";
+                        return;
+                    }
+                }
+
 
                 //ACÁ AGREGO EL PRODUCTO QUE SE SELECCIONÓ
                 dataTable.Rows.Add(idProducto, nombreProducto,idProvedor,precioUnidad);
