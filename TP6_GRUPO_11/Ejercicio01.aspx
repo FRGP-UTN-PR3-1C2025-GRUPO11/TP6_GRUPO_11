@@ -60,8 +60,9 @@
                 <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
                 <SortedDescendingCellStyle BackColor="#D6DFDF" />
                 <SortedDescendingHeaderStyle BackColor="#002876" />
-            </asp:GridView>
+           </asp:GridView>         
         </div>
-    </form>
+      
+    </form>  
 </body>
 </html>

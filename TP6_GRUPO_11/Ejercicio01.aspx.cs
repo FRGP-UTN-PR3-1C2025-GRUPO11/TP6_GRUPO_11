@@ -28,7 +28,7 @@ namespace TP6_GRUPO_11
 
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvProductos.PageIndex= e.NewPageIndex;
+            gvProductos.PageIndex = e.NewPageIndex;
             CargarGridView();
 
         }
@@ -37,27 +37,27 @@ namespace TP6_GRUPO_11
         {
             string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lblIdProducto")).Text;
 
-           Producto producto = new Producto(Convert.ToInt32(idProducto));
-           gestionNeptuno gestion = new gestionNeptuno();
-            
-           gestion.EliminarProducto(producto);
-           CargarGridView();
+            Producto producto = new Producto(Convert.ToInt32(idProducto));
+            gestionNeptuno gestion = new gestionNeptuno();
+
+            gestion.EliminarProducto(producto);
+            CargarGridView();
 
         }
 
-      
-       
+
+
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
 
-            
+
         }
 
-    protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
-    {
-        gvProductos.EditIndex = e.NewEditIndex;
-        CargarGridView(); 
-    }
+        protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvProductos.EditIndex = e.NewEditIndex;
+            CargarGridView();
+        }
 
         protected void gvProductos_RowUpdating1(System.Object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
