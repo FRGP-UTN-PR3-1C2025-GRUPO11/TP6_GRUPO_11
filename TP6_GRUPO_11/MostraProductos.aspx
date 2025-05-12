@@ -5,12 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>TP 6 - GRUPO 11 - Ejercicio 2 - Mostrar Productos</title>
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" />
 </head>
 <body>
+    <div class="content">
+    <h1>Productos Seleccionados</h1>
     <form id="formularioMostraProductos" runat="server">
         <div>
-            <h1>Productos Seleccionados:</h1>
             <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -27,5 +29,6 @@
         </div>
 
     </form>
+    </div>
 </body>
 </html>
