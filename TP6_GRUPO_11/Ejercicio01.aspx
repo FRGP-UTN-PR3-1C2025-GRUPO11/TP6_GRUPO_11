@@ -63,7 +63,12 @@
                 <SortedDescendingCellStyle BackColor="#D6DFDF" />
                 <SortedDescendingHeaderStyle BackColor="#002876" />
            </asp:GridView>         
-        </div>
+            <asp:Label ID="lbl_BuscarProd" runat="server" Text="Ingrese el nombre del producto:"></asp:Label>
+            <asp:TextBox ID="txtBuscarProducto" runat="server"></asp:TextBox>
+            <asp:Button ID="btnBuscarProd" runat="server" OnClick="btnBuscarProd_Click" Text="Buscar" />
+&nbsp;
+            <asp:Label ID="lblBuscarP" runat="server" Text="Label"></asp:Label>
+&nbsp;</div>
       
     </form>  
     <asp:HyperLink ID="hlEjercicios" runat="server" NavigateUrl="~/Inicio.aspx" Text="Volver a Ejercicios">Volver a Ejercicios</asp:HyperLink>

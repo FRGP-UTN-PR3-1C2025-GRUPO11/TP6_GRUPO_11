@@ -88,5 +88,10 @@ namespace TP6_GRUPO_11
             gvProductos.EditIndex = -1;
             CargarGridView();
         }
+
+        protected void btnBuscarProd_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
