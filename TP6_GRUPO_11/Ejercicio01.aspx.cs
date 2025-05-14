@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TP6_GRUPO_11.Conexion;
+using static System.Collections.Specialized.BitVector32;
 
 namespace TP6_GRUPO_11
 {
@@ -91,7 +93,37 @@ namespace TP6_GRUPO_11
 
         protected void btnBuscarProd_Click(object sender, EventArgs e)
         {
-           
+            gestionNeptuno gestion = new gestionNeptuno();
+
+            DataTable productos = gestion.ObtenerProductos();
+
+            string idProducto = txtBuscarProducto.Text;
+
+            string productoEncontrado="";
+
+
+
+            foreach (DataRow fila in productos.Rows)
+            {
+                
+                if (Convert.ToInt32(fila["IdProducto"])== Convert.ToInt32(idProducto))
+                {
+                    productoEncontrado = "Nombre: " + fila["NombreProducto"].ToString() + "<br>" +
+                                  "Cantidad por unidad: " + fila["CantidadPorUnidad"].ToString() + "<br>" +
+                                  "Precio: " + fila["PrecioUnidad"].ToString();
+                }
+                else
+                {
+                    txtBuscarProducto.Text = "";
+                }
+             
+            }
+            lblBuscarP.Text = productoEncontrado;
+
+            
+
         }
     }
 }
+
+

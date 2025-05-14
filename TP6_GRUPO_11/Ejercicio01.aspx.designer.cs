@@ -60,6 +60,15 @@ namespace TP6_GRUPO_11
         protected global::System.Web.UI.WebControls.Button btnBuscarProd;
 
         /// <summary>
+        /// Control rfvEj1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEj1;
+
+        /// <summary>
         /// Control lblBuscarP.
         /// </summary>
         /// <remarks>
