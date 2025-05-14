@@ -66,8 +66,11 @@
             <asp:Label ID="lbl_BuscarProd" runat="server" Text="Ingrese el id del producto:"></asp:Label>
             <asp:TextBox ID="txtBuscarProducto" runat="server" ValidationGroup="Grupo1"></asp:TextBox>
             <asp:Button ID="btnBuscarProd" runat="server" OnClick="btnBuscarProd_Click" Text="Buscar" ValidationGroup="Grupo1" />
-&nbsp;<asp:RequiredFieldValidator ID="rfvEj1" runat="server" ControlToValidate="txtBuscarProducto" ForeColor="Red" ValidationGroup="Grupo1">Debe ingresar un numero</asp:RequiredFieldValidator>
-&nbsp;<asp:Label ID="lblBuscarP" runat="server"></asp:Label>
+&nbsp;<asp:RequiredFieldValidator ID="rfvEj1" runat="server" ControlToValidate="txtBuscarProducto" ForeColor="Red" ValidationGroup="Grupo1" Display="Dynamic">Debe ingresar un numero</asp:RequiredFieldValidator>
+&nbsp;<asp:RegularExpressionValidator ID="revIdProducto" runat="server" ControlToValidate="txtBuscarProducto" 
+    Display="Dynamic" ErrorMessage="Ingrese un ID válido. No se aceptan caracteres" 
+    Font-Bold="False" ForeColor="Red" ValidationExpression="^[0-9]*$" ValidationGroup="Grupo1"></asp:RegularExpressionValidator>
+            <asp:Label ID="lblBuscarP" runat="server"></asp:Label>
 &nbsp;</div>
       
     </form>  

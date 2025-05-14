@@ -69,6 +69,15 @@ namespace TP6_GRUPO_11
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEj1;
 
         /// <summary>
+        /// Control revIdProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revIdProducto;
+
+        /// <summary>
         /// Control lblBuscarP.
         /// </summary>
         /// <remarks>

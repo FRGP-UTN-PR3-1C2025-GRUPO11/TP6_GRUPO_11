@@ -106,19 +106,21 @@ namespace TP6_GRUPO_11
             foreach (DataRow fila in productos.Rows)
             {
                 
-                if (Convert.ToInt32(fila["IdProducto"])== Convert.ToInt32(idProducto))
+                if ( fila["IdProducto"].ToString() == idProducto)
                 {
                     productoEncontrado = "Nombre: " + fila["NombreProducto"].ToString() + "<br>" +
                                   "Cantidad por unidad: " + fila["CantidadPorUnidad"].ToString() + "<br>" +
                                   "Precio: " + fila["PrecioUnidad"].ToString();
+                    lblBuscarP.Text = productoEncontrado;
+                    txtBuscarProducto.Text = "";
+                    return;
                 }
                 else
                 {
-                    txtBuscarProducto.Text = "";
+                    lblBuscarP.Text = "Producto no encontrado";
                 }
              
             }
-            lblBuscarP.Text = productoEncontrado;
 
             
 
