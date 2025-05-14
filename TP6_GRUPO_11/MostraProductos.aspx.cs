@@ -11,11 +11,29 @@ namespace TP6_GRUPO_11
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+           
             if (Session["ProductosSeleccionados"]!=null)
             {
                 gvProductos.DataSource = Session["ProductosSeleccionados"];
                 gvProductos.DataBind();
+
+                int contador = 0;
+
+                
+                foreach (GridViewRow fila in gvProductos.Rows)
+                {
+                    contador++;
+                    
+                }
+
+                lblMostrarTotal.Text = "Total de productos seleccionados: " + contador.ToString();
+
+
             }
+
+
+
         }
     }
 }

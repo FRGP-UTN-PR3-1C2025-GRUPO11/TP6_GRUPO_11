@@ -26,6 +26,8 @@
                 <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
             <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Ejercicio02.aspx">Ir al inicio</asp:HyperLink>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblMostrarTotal" runat="server"></asp:Label>
         </div>
 
     </form>
