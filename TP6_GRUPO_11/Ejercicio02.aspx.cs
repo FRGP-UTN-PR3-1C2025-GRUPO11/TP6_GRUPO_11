@@ -18,7 +18,7 @@ namespace TP6_GRUPO_11
         {
             try
             {
-                Session["ProductosSeleccionados"] = null;
+                Application["ProductosSeleccionados"] = null;
                 lblEliminados.Text = "Productos eliminados de la lista de seleccionados";
 
             }

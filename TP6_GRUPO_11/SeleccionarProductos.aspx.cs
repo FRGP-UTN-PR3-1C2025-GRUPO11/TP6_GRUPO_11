@@ -29,8 +29,8 @@ namespace TP6_GRUPO_11
                 string nombreProducto = ((Label)row.FindControl("lbl_it_Nombre_Producto")).Text;
                 string idProvedor = ((Label)row.FindControl("lbl_it_Id_Proveedor")).Text;
                 string precioUnidad = ((Label)row.FindControl("lbl_it_Precio_Unitario")).Text;
-                // ACÁ OBTENGO O CREO LA TABLA EN LA SESSION
-                DataTable dataTable = Session["ProductosSeleccionados"] as DataTable;
+                // ACÁ OBTENGO O CREO LA TABLA EN LA SESSION o Application
+                DataTable dataTable = Application["ProductosSeleccionados"] as DataTable;
                 if (dataTable == null)
                 {
                     dataTable = new DataTable();
@@ -38,7 +38,7 @@ namespace TP6_GRUPO_11
                     dataTable.Columns.Add("NombreProducto");
                     dataTable.Columns.Add("IdProveedor");
                     dataTable.Columns.Add("PrecioUnidad");
-                    Session["ProductosSeleccionados"] = dataTable;
+                    Application["ProductosSeleccionados"] = dataTable;
                     
                 }
 

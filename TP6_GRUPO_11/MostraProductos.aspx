@@ -25,9 +25,11 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
-            <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Ejercicio02.aspx">Ir al inicio</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lblMostrarTotal" runat="server"></asp:Label>
+            <br />
+            <br />
+            <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Ejercicio02.aspx">Ir al inicio</asp:HyperLink>
         </div>
 
     </form>
